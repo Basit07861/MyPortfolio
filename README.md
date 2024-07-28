@@ -1,8 +1,6 @@
 # MyPortfolio
 A personal portfolio website built using HTML, CSS, and JavaScript. Showcasing my skills, projects, and background in software development. Explore my work, learn about my experiences, and connect with me. Designed with a modern, responsive layout for an engaging user experience.
 
-A simple and fun Tic-Tac-Toe game built using HTML, CSS, and JavaScript.
-
 ![Made-With-HTML](https://img.shields.io/badge/Made_with-HTML-informational?style=for-the-badge&logo=html5) 
 ![Made-With-CSS](https://img.shields.io/badge/Made_with-CSS-informational?style=for-the-badge&logo=css3) 
 ![Made-With-JS](https://img.shields.io/badge/Made_with-JavaScript-informational?style=for-the-badge&logo=javascript)
