@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basit-Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: rgb(0, 0, 32);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 75px;
+        background-color: rgb(18, 18, 44);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+      }
+
+      .logo img {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        list-style: none;
+        margin: 0 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: azure;
+        transition: color 0.3s, font-size 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(154, 154, 255);
+        font-size: 1.05rem;
+      }
+
+      .left {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+
+      .firstSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 79px 0;
+        flex-wrap: wrap;
+        gap: 20px; /* Add some gap between the profile image and text */
+      }
+
+      .profile img {
+        width: 100%;
+        max-width: 200px; /* Make the profile image smaller */
+        border-radius: 50%;
+        border: 5px solid rgb(166, 87, 240); /* Add a border */
+        transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effects */
+      }
+
+      .profile img:hover {
+        transform: scale(1.1); /* Scale up the image on hover */
+        box-shadow: 0 0 15px rgb(166, 87, 240); /* Add a shadow effect on hover */
+      }
+
+      .leftSection {
+        font-size: 1.5rem;
+        margin-top: 0;
+        position: relative;
+        padding-bottom: 80px;
+      }
+
+      .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .social-link:hover {
+        background-color: rgb(166, 87, 240);
+        transform: scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .social-link.instagram:hover {
+        color: #e1306c; /* Instagram color */
+      }
+
+      .social-link.linkedin:hover {
+        color: #0077b5; /* LinkedIn color */
+      }
+
+      .social-link.github:hover {
+        color: #333; /* GitHub color */
+      }
+
+      /* Add a pulse animation */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .social-link:active {
+        animation: pulse 0.5s;
+      }
+
+      .buttons {
+        margin-top: 20px;
+      }
+
+      .buttons input[type="button"] {
+        background-color: rgb(166, 87, 240);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      }
+
+      .buttons input[type="button"]:hover {
+        background-color: rgb(130, 65, 192);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      }
+
+      .buttons input[type="button"]:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+
+      .rightSection img {
+        width: 80%;
+        max-width: 400px;
+        margin-top: 70px;
+        margin-left: 163px;
+      }
+
+      .purple {
+        color: rgb(166, 87, 240);
+      }
+
+      #element {
+        color: rgb(166, 87, 240);
+      }
+
+      .skillsSection {
+        padding: 50px 20px;
+        background: linear-gradient(
+          135deg,
+          rgb(18, 18, 44) 0%,
+          rgb(34, 34, 68) 100%
+        );
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .skillsSection h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: rgb(166, 87, 240);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(34, 34, 68, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        width: 150px;
+        text-align: center;
+      }
+
+      .skill:hover {
+        transform: scale(1.1);
+        background: rgba(166, 87, 240, 0.8);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      }
+
+      .skill-logo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+        transition: transform 0.3s;
+      }
+
+      .skill-logo:hover {
+        transform: rotate(15deg);
+      }
+
+      .skill-name {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 600;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .projectsSection {
+        padding: 50px 20px;
+        background-color: rgb(18, 18, 44);
+        text-align: center;
+      }
+
+      .projectsSection h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: rgb(166, 87, 240);
+      }
+
+      .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .project {
+        background-color: rgb(34, 34, 68);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        width: 300px;
+        text-align: center;
+      }
+
+      .project:hover {
+        background-color: rgb(166, 87, 240);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+      }
+
+      .project h3 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .project p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .project-link {
+        display: inline-block;
+        padding: 10px 25px;
+        background-color: rgb(166, 87, 240);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+        font-size: 1rem;
+      }
+
+      .project-link:hover {
+        background-color: rgb(120, 51, 184);
+        transform: scale(1.05);
+      }
+
+      .aboutSection {
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          rgb(34, 34, 68) 0%,
+          rgb(18, 18, 44) 100%
+        );
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        color: white;
+        transition: background-color 0.5s ease-in-out;
+      }
+
+      .aboutSection h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: rgb(166, 87, 240);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .aboutSection .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        animation: slideIn 1s ease-in-out;
+      }
+
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .aboutSection .content div {
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .aboutSection .content div:hover {
+        color: #ffffff;
+      }
+
+      .aboutSection .content div:hover h3 {
+        color: #a657f0;
+      }
+
+      .aboutSection .content div h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: rgb(166, 87, 240);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .aboutSection .content div p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgb(230, 230, 230);
+      }
+
+      /* Optional: Add some animation */
+      .aboutSection .content div {
+        animation: fadeInUp 1s ease-in-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .connectSection {
+        padding: 60px 20px;
+        background: linear-gradient(
+          135deg,
+          rgb(18, 18, 44) 0%,
+          rgb(34, 34, 68) 100%
+        );
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        color: white;
+        transition: background-color 0.5s ease-in-out;
+      }
+
+      .connectSection h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: rgb(166, 87, 240);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        animation: slideInFromTop 1s ease-in-out;
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .connectSection .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        animation: slideInFromBottom 1s ease-in-out;
+      }
+
+      @keyframes slideInFromBottom {
+        0% {
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .connectSection .content .contact-form {
+        width: 60%;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        transition: background-color 0.3s ease-in-out;
+        animation: fadeInUp 1s ease-in-out;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .connectSection .content .contact-form h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: rgb(166, 87, 240);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .connectSection .content .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .connectSection .content .contact-form form .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .connectSection .content .contact-form form .form-group label {
+        font-size: 1rem;
+      }
+
+      .connectSection .content .contact-form form .form-group input,
+      .connectSection .content .contact-form form .form-group textarea {
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .connectSection .content .contact-form form .form-group input:focus,
+      .connectSection .content .contact-form form .form-group textarea:focus {
+        box-shadow: 0 0 0 2px rgb(166, 87, 240);
+      }
+
+      .connectSection
+        .content
+        .contact-form
+        form
+        .form-group
+        input[type="submit"] {
+        background-color: rgb(166, 87, 240);
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .connectSection
+        .content
+        .contact-form
+        form
+        .form-group
+        input[type="submit"]:hover {
+        background-color: rgb(130, 65, 192);
+      }
+
+      .footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .footer p {
+        margin: 0;
+        font-size: 1em;
+        animation: fadeInUp 1s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="#home" class="logo">
+          <img src="logo.png" alt="My Logo" />
+        </a>
+        <div class="left">Basit's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Connect with Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="firstSection">
+        <div class="profile">
+          <img src="Main-Image.jpg" alt="Profile Image" />
+        </div>
+        <div class="leftSection">
+          Hi! My name is <span class="purple">Basit</span>
+          <div>and I'm a Passionate</div>
+          <span id="element"></span>
+          <div class="buttons">
+            <input type="button" value="View Resume" onclick="openResume()" />
+          </div>
+
+          <div class="social-media">
+            <p>Find me on:</p>
+            <a
+              href="https://instagram.com/ig._.carnage"
+              class="social-link instagram"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/basit-mahmood"
+              class="social-link linkedin"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/Basit07861/"
+              class="social-link github"
+              target="_blank"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div id="png" class="rightSection">
+          <img src="bg.png" alt="Background Image" />
+        </div>
+      </section>
+      <hr />
+      <section id="skills" class="skillsSection">
+        <h2>What I Know?</h2>
+        <div class="skills">
+          <div class="skill">
+            <img src="HTML5-Logo.png" alt="HTML Logo" class="skill-logo" />
+            <div class="skill-name">HTML</div>
+          </div>
+          <div class="skill">
+            <img src="css.png" alt="CSS Logo" class="skill-logo" />
+            <div class="skill-name">CSS</div>
+          </div>
+          <div class="skill">
+            <img src="JS-Logo.png" alt="JavaScript Logo" class="skill-logo" />
+            <div class="skill-name">JavaScript</div>
+          </div>
+          <div class="skill">
+            <img src="Java_Logo.png" alt="Java Logo" class="skill-logo" />
+            <div class="skill-name">Java</div>
+          </div>
+          <div class="skill">
+            <img src="C_Logo.png" alt="C Logo" class="skill-logo" />
+            <div class="skill-name">C</div>
+          </div>
+          <div class="skill">
+            <img src="C++_Logo.png" alt="C++ Logo" class="skill-logo" />
+            <div class="skill-name">C++</div>
+          </div>
+          <div class="skill">
+            <img src="Python-logo.png" alt="Python Logo" class="skill-logo" />
+            <div class="skill-name">Python</div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="projects" class="projectsSection">
+        <h2>My Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <h3>SnakeMania</h3>
+            <p>Built using HTML, CSS, and JavaScript.</p>
+            <a
+              href="https://github.com/Basit07861/SnakeMania.git"
+              class="project-link"
+              >View Project</a
+            >
+          </div>
+          <div class="project">
+            <h3>Tic-Tac-Toe</h3>
+            <p>Built using HTML, CSS, and JavaScript.</p>
+            <a
+              href="https://github.com/Basit07861/Tic-tac-toe.git"
+              class="project-link"
+              >View Project</a
+            >
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="about" class="aboutSection">
+        <h2>Get to Know Me</h2>
+        <div class="content">
+          <div class="about-details">
+            <h3>About Me</h3>
+            <p>
+              Hello! I'm Basit, a B.tech student and a web developer with a
+              passion for creating engaging and functional websites. I love to
+              explore new technologies and continuously improve my skills.
+            </p>
+            <br />
+            <p>
+              As a passionate B.Tech. student, I bring strong expertise in
+              programming languages and web development. My proficiency in
+              Python, Java, C, C++, and web development technologies like HTML,
+              CSS, JavaScript etc. sets me apart. With a knack for
+              problem-solving and a relentless drive for innovation, I am eager
+              to contribute fresh perspectives and cutting-edge solutions to
+              your team. Let's create something extraordinary together!
+            </p>
+          </div>
+          <div class="hobbies">
+            <h3>Hobbies</h3>
+            <p>
+              In my free time, I enjoy reading, hiking, and experimenting with
+              new programming languages. I'm also a huge fan of video games.
+            </p>
+          </div>
+          <div class="education">
+            <h3>Education</h3>
+            <p>
+              I am currently a Bachelor of Technology student in Information
+              Technology at Dr. APJ Abdul Kalam Technical University, Lucknow,
+              actively building a solid foundation in software development and
+              enhancing my problem-solving skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="connectSection">
+        <h2>Connect with Me</h2>
+        <div class="content">
+          <div class="contact-form">
+            <form action="https://formspree.io/f/xblrgook" method="POST">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Basit's Portfolio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#contactForm").on("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Clear previous messages
+          $("#formMessage").text("");
+
+          // Get form values
+          var name = $("#name").val().trim();
+          var email = $("#email").val().trim();
+          var message = $("#message").val().trim();
+
+          // Validate form fields
+          if (name === "") {
+            $("#formMessage").text("Please enter your name.");
+            return;
+          }
+          if (email === "") {
+            $("#formMessage").text("Please enter your email.");
+            return;
+          }
+          if (!validateEmail(email)) {
+            $("#formMessage").text("Please enter a valid email address.");
+            return;
+          }
+          if (message === "") {
+            $("#formMessage").text("Please enter your message.");
+            return;
+          }
+
+          // If validation passes, handle form submission
+          // You can send the form data using AJAX, here is an example:
+          $.ajax({
+            url: "https://example.com/submit-form", // Replace with your form submission URL
+            method: "POST",
+            data: {
+              name: name,
+              email: email,
+              message: message,
+            },
+            success: function (response) {
+              $("#formMessage").text(
+                "Your message has been sent successfully!"
+              );
+              $("#contactForm")[0].reset(); // Reset form fields
+            },
+            error: function (error) {
+              $("#formMessage").text(
+                "An error occurred. Please try again later."
+              );
+            },
+          });
+        });
+
+        function validateEmail(email) {
+          var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(email);
+        }
+      });
+    </script>
+
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web Developer", "Content Writer", "Java Developer"],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+      });
+
+      function openResume() {
+        window.open(
+          "https://drive.google.com/file/d/1sNvuNoGb16AL84E_Yuokck1xYfqKTjM4/view?usp=drive_link",
+          "_blank"
+        );
+      }
+    </script>
+  </body>
+</html>
